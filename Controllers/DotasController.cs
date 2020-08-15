@@ -9,7 +9,12 @@ namespace DotaAPI.Controllers
     [ApiController]
     public class DotasController : ControllerBase
     {
-        private readonly MockDotaRepo _repository = new MockDotaRepo();
+        private readonly IDotaRepo _repository;
+
+        public DotasController(IDotaRepo repository)
+        {
+            _repository = repository;
+        }
         //GET api/DotaAPI
         [HttpGet]
         public ActionResult <IEnumerable<Dota>> GetAllCharacters()
