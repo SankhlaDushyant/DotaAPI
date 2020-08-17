@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace DotaAPI.Data
 {
-    public class SqlDotaRepo : IDotaRepo
+    public class SqlDotaRepoWithEf : IDotaRepo
     {
         private readonly DotaContext _context;
 
-        public SqlDotaRepo(DotaContext context)
+        public SqlDotaRepoWithEf(DotaContext context)
         {
             _context = context;
         }

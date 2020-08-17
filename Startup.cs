@@ -28,7 +28,7 @@ namespace DotaAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IDotaRepo, SqlDotaRepo>();
+            services.AddScoped<IDotaRepo, SqlDotaRepoWithoutEf>();
             services.AddDbContext<DotaContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("DotaConnection")));
         }
