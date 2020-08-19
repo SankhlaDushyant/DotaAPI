@@ -46,5 +46,22 @@ namespace DotaAPI.Data
         {
             throw new NotImplementedException();
         }
+
+        public Dota AddCharacter(Dota Character)
+        {
+            var DotaData = Character;
+            {
+                //string _connectionString = ConfigurationManager.ConnectionStrings["DotaConnection"].ConnectionString;
+                string _connectionString = "Server=localhost\\SQLEXPRESS;Database=DotaHeroes;Trusted_Connection=True;MultipleActiveResultSets=true";
+                using SqlConnection con = new SqlConnection(_connectionString);
+                string query = "Insert into DotaChampions values ('" + DotaData.Id + "','" + DotaData.Character + "'," + DotaData.Power + ",'" + DotaData.Type + "')";
+                using var command = new SqlCommand(query, con);
+                con.Open();
+                DbDataReader reader = command.ExecuteReader();
+                con.Close();
+            };
+
+            return DotaData;
+        }
     }
 }

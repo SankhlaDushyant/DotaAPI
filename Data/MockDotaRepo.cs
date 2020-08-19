@@ -40,5 +40,10 @@ namespace DotaAPI.Data
                 Type = "Melee"
             };
         }
+
+        Dota IDotaRepo.AddCharacter(Dota character)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

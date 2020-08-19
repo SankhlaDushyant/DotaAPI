@@ -30,5 +30,14 @@ namespace DotaAPI.Controllers
             var DotaItem = _repository.GetCharacterbyId(id);
             return Ok(DotaItem);
         }
+
+        //POST api/DotaAPI
+        [HttpPost]
+
+        public ActionResult <Dota> AddCharacter(Dota Character)
+        {
+            var DotaItem = _repository.AddCharacter(Character);
+            return Ok(DotaItem);
+        }
     }
 }
