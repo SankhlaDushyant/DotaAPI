@@ -6,6 +6,16 @@ namespace DotaAPI.Data
 {
     public class MockDotaRepo : IDotaRepo
     {
+        public Dota AddCharacter(Dota character)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteCharacter(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Dota> GetAllCharacters()
         {
             var DotaList = new List<Dota>
@@ -33,7 +43,8 @@ namespace DotaAPI.Data
         }
         public Dota GetCharacterbyId(int id)
         {
-            return new Dota{
+            return new Dota
+            {
                 Id = 0,
                 Character = "Jugg",
                 Power = 1000,
@@ -41,7 +52,7 @@ namespace DotaAPI.Data
             };
         }
 
-        Dota IDotaRepo.AddCharacter(Dota character)
+        public Dota UpdateCharacter(Dota character)
         {
             throw new System.NotImplementedException();
         }

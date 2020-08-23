@@ -22,7 +22,17 @@ namespace DotaAPI.Data
             return _context.Dotas.FirstOrDefault(p => p.Id == id);
         }
 
-        Dota IDotaRepo.AddCharacter(Dota character)
+        public Dota AddCharacter(Dota character)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteCharacter(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Dota UpdateCharacter(Dota character)
         {
             throw new System.NotImplementedException();
         }

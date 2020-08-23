@@ -7,7 +7,8 @@ namespace DotaAPI.Data
     {
         IEnumerable<Dota> GetAllCharacters();
         Dota GetCharacterbyId(int id);
-
         Dota AddCharacter(Dota character);
+        void DeleteCharacter(int id);
+        Dota UpdateCharacter(Dota character);
     } 
 }

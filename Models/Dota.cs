@@ -7,7 +7,7 @@ namespace DotaAPI.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MaxLength(50)] //varchar change 
         public string Character { get; set; }
         [Required]
         public int Power { get; set; }

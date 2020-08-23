@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DotaAPI.Data;
 using DotaAPI.Models;
@@ -37,6 +38,22 @@ namespace DotaAPI.Controllers
         public ActionResult <Dota> AddCharacter(Dota Character)
         {
             var DotaItem = _repository.AddCharacter(Character);
+            return Ok(DotaItem);
+        }
+
+        //DELETE api/DotaAPI/2
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCharacter(int id)
+        {
+            _repository.DeleteCharacter(id);
+            return Ok(200);
+        }
+
+        //PUT api/DotaAPI
+        [HttpPut]
+        public ActionResult UpdateCharacter(Dota Character)
+        {
+            var DotaItem = _repository.UpdateCharacter(Character);
             return Ok(DotaItem);
         }
     }
